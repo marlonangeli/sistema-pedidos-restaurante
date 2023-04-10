@@ -1,3 +1,7 @@
+@model IEnumerable<Mesa>
+@{
+  Layout = "_Layout";
+}
 <head>    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,16 +19,26 @@
       </tr>
     </thead>
     <tbody>
-
+      @foreach (var mesa in Model) {
         <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">mesa.NumeroMesa</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">mesa.Status</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">mesa.HoraAbertura</td>
+          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Numero</td>
+          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Status</td>
+          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.HoraAbertura</td>
           <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-            <a href="/mesas/editar/mesa.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
-            <a href="/mesas/excluir/mesa.Id" class="text-red-400 hover:text-red-600 underline">Excluir</a>
+            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@mesa.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
+            <a href="/Mesa/excluir/1" class="text-red-400 hover:text-red-600 underline">Excluir</a>
           </td>
         </tr>
+        }
     </tbody>
   </table>
 </body>
+
+@section Scripts {
+  <script>
+    function editarMesa(event, mesaId) {
+      event.preventDefault();
+      window.location.href = "/Mesa/editar/" + mesaId;
+    }
+  </script>
+}
