@@ -6,4 +6,5 @@ public class Garcom
     public string Nome { get; set; }
     public string Sobrenome { get; set; }
     public string NumeroTelefone { get; set; }
+    public int Vendas { get; set; }
 }

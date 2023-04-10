@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SFmawWH14O9oddEy0X2LxgaI+WvQOpwdbesXNfLip1wN3vh+KLOYy1S/uJRw40DxEDIZ3Nt7x3+PZ8j73rh8ZA==",
+  "dgSpecHash": "rfpovWCDdFTHgdC80n7EFpotlWWh2k8+FiPrir35xICMW5lp7wutI9rQlbvqmraHckyULQ8UEq9FAmzwHL73yQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Meus Arquivos\\UTFPR\\5ºPeríodo CC\\Tecnologia em Desenvolvimento de Sistemas\\Gamificação\\Restaurante Cheng\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Web\\Restaurante.Cheng.Web.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\gabri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
