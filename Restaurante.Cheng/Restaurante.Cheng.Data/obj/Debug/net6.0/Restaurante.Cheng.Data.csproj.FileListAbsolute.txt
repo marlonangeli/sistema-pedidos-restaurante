@@ -1,0 +1,17 @@
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\bin\Debug\net6.0\Restaurante.Cheng.Data.deps.json
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\bin\Debug\net6.0\Restaurante.Cheng.Data.runtimeconfig.json
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\bin\Debug\net6.0\Restaurante.Cheng.Data.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\bin\Debug\net6.0\Restaurante.Cheng.Data.pdb
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\bin\Debug\net6.0\Restaurante.Cheng.Domain.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\bin\Debug\net6.0\Restaurante.Cheng.Domain.pdb
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.csproj.AssemblyReference.cache
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.AssemblyInfoInputs.cache
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.AssemblyInfo.cs
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.csproj.CoreCompileInputs.cache
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.csproj.CopyComplete
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\refint\Restaurante.Cheng.Data.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.pdb
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\Restaurante.Cheng.Data.genruntimeconfig.cache
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Data\obj\Debug\net6.0\ref\Restaurante.Cheng.Data.dll

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurante.Cheng.Web", "Restaurante.Cheng.Web\Restaurante.Cheng.Web.csproj", "{EE72878F-F670-4242-BB7A-EADF7588369C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurante.Cheng.Domain", "Restaurante.Cheng.Domain\Restaurante.Cheng.Domain.csproj", "{D2C5154B-3A97-4F88-9E41-6C91049E4A97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurante.Cheng.Data", "Restaurante.Cheng.Data\Restaurante.Cheng.Data.csproj", "{2369C4FF-8D20-4D86-92AE-6C15CB6DE633}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE72878F-F670-4242-BB7A-EADF7588369C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE72878F-F670-4242-BB7A-EADF7588369C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE72878F-F670-4242-BB7A-EADF7588369C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE72878F-F670-4242-BB7A-EADF7588369C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C5154B-3A97-4F88-9E41-6C91049E4A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C5154B-3A97-4F88-9E41-6C91049E4A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C5154B-3A97-4F88-9E41-6C91049E4A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C5154B-3A97-4F88-9E41-6C91049E4A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2369C4FF-8D20-4D86-92AE-6C15CB6DE633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2369C4FF-8D20-4D86-92AE-6C15CB6DE633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2369C4FF-8D20-4D86-92AE-6C15CB6DE633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2369C4FF-8D20-4D86-92AE-6C15CB6DE633}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

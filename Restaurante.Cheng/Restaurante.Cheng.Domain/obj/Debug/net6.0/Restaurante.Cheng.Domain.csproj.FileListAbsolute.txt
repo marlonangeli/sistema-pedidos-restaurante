@@ -1,0 +1,12 @@
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\bin\Debug\net6.0\Restaurante.Cheng.Domain.deps.json
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\bin\Debug\net6.0\Restaurante.Cheng.Domain.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\bin\Debug\net6.0\Restaurante.Cheng.Domain.pdb
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\Restaurante.Cheng.Domain.csproj.AssemblyReference.cache
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\Restaurante.Cheng.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\Restaurante.Cheng.Domain.AssemblyInfoInputs.cache
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\Restaurante.Cheng.Domain.AssemblyInfo.cs
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\Restaurante.Cheng.Domain.csproj.CoreCompileInputs.cache
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\Restaurante.Cheng.Domain.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\refint\Restaurante.Cheng.Domain.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\Restaurante.Cheng.Domain.pdb
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Domain\obj\Debug\net6.0\ref\Restaurante.Cheng.Domain.dll
