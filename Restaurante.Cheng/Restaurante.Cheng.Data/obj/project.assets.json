@@ -1369,32 +1369,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marlo\\.nuget\\packages\\": {}
+    "C:\\Users\\gabri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Projects\\repos\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Data\\Restaurante.Cheng.Data.csproj",
+      "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Meus Arquivos\\UTFPR\\5ºPeríodo CC\\Tecnologia em Desenvolvimento de Sistemas\\Gamificação\\Restaurante Cheng\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Data\\Restaurante.Cheng.Data.csproj",
       "projectName": "Restaurante.Cheng.Data",
-      "projectPath": "D:\\Dev\\Projects\\repos\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Data\\Restaurante.Cheng.Data.csproj",
-      "packagesPath": "C:\\Users\\marlo\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\Projects\\repos\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Data\\obj\\",
+      "projectPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Meus Arquivos\\UTFPR\\5ºPeríodo CC\\Tecnologia em Desenvolvimento de Sistemas\\Gamificação\\Restaurante Cheng\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Data\\Restaurante.Cheng.Data.csproj",
+      "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Meus Arquivos\\UTFPR\\5ºPeríodo CC\\Tecnologia em Desenvolvimento de Sistemas\\Gamificação\\Restaurante Cheng\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\marlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Dev\\Projects\\repos\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Domain\\Restaurante.Cheng.Domain.csproj": {
-              "projectPath": "D:\\Dev\\Projects\\repos\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Domain\\Restaurante.Cheng.Domain.csproj"
+            "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Meus Arquivos\\UTFPR\\5ºPeríodo CC\\Tecnologia em Desenvolvimento de Sistemas\\Gamificação\\Restaurante Cheng\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Domain\\Restaurante.Cheng.Domain.csproj": {
+              "projectPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Meus Arquivos\\UTFPR\\5ºPeríodo CC\\Tecnologia em Desenvolvimento de Sistemas\\Gamificação\\Restaurante Cheng\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Domain\\Restaurante.Cheng.Domain.csproj"
             }
           }
         }
@@ -1450,7 +1452,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
