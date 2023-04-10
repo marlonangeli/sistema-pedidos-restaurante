@@ -1,4 +1,4 @@
-@model IEnumerable<Mesa>
+@model IEnumerable<Categoria>
 <head>    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -10,19 +10,19 @@
     <thead>
       <tr>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">#</th>
-        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Status</th>
-        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Hora de Abertura</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Nome</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Descricao</th>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"></th>
       </tr>
     </thead>
     <tbody>
-      @foreach (var mesa in Model) {
+      @foreach (var categoria in Model) {
         <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Numero</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Status</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.HoraAbertura</td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Id</td>
+          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Nome</td>
+          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Descricao</td>
           <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@mesa.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
+            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@categoria.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
             <a href="/Mesa/excluir/1" class="text-red-400 hover:text-red-600 underline">Excluir</a>
           </td>
         </tr>

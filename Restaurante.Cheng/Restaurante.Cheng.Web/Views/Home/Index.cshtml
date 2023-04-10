@@ -1,8 +1,171 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200">
+
+
+    <div class="container mx-auto my-8 px-4">
+        <h2 class="text-xl font-bold mb-4">Resumo de Vendas</h2>
+        <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 xl:w-1/3 px-2 mb-4">
+                <div class="bg-white shadow rounded-lg p-4">
+                    <h3 class="text-lg font-bold mb-2">Vendas por Garçom</h3>
+                    <canvas id="chart1"></canvas>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 px-2 mb-4">
+                <div class="bg-white shadow rounded-lg p-4">
+                    <h3 class="text-lg font-bold mb-2">Vendas por Mesa</h3>
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-xl font-bold my-8">Levantamento de Quantidades Vendidas</h2>
+        <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 xl:w-1/3 px-2 mb-4">
+                <div class="bg-white shadow rounded-lg p-4">
+                    <h3 class="text-lg font-bold mb-2">Produtos Vendidos</h3>
+                    <canvas id="chart3"></canvas>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 px-2 mb-4">
+                <div class="bg-white shadow rounded-lg p-4">
+                    <h3 class="text-lg font-bold mb-2">Categorias Vendidas</h3>
+                    <canvas id="chart4"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 xl:w-1/3 px-2 mb-4">
+            <div class="bg-white shadow rounded-lg p-4">
+                <h3 class="text-lg font-bold mb-2">Tempos de Atendimento</h3>
+                <canvas id="chart5"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script>
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+        var chart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Garçom 1', 'Garçom 2', 'Garçom 3', 'Garçom 4'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [3000, 4500, 2000, 6000],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+        var chart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Mesa 1', 'Mesa 2', 'Mesa 3', 'Mesa 4', 'Mesa 5'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [5000, 6500, 8000, 3000, 4000],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx3 = document.getElementById('chart3').getContext('2d');
+        var chart3 = new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: ['Alimentos', 'Bebidas', 'Sobremesas'],
+                datasets: [{
+                    label: 'Quantidades Vendidas por Categoria',
+                    data: [120, 75, 40],
+                    backgroundColor: ['#FDE68A', '#A3E635', '#C7D2FE'],
+                    borderColor: ['#FCD34D', '#6EE7B7', '#ACB6FE'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        var ctx4 = document.getElementById('chart4').getContext('2d');
+        var chart4 = new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['Garçom 1', 'Garçom 2', 'Garçom 3', 'Garçom 4', 'Garçom 5'],
+                datasets: [{
+                    label: 'Vendas por Garçom',
+                    data: [450, 320, 240, 620, 520],
+                    backgroundColor: '#60A5FA',
+                    borderColor: '#2563EB',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });

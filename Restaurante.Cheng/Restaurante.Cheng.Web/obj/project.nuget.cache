@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J82RBCWfSsa4mLY1jjZUQwpvrFmwYvcUS0dr0CMpJIt2k8nIrshuQC4j0VsqRTMQgv6zdcWtF7vEfWJI1pjSdw==",
+  "dgSpecHash": "SFmawWH14O9oddEy0X2LxgaI+WvQOpwdbesXNfLip1wN3vh+KLOYy1S/uJRw40DxEDIZ3Nt7x3+PZ8j73rh8ZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Meus Arquivos\\UTFPR\\5ºPeríodo CC\\Tecnologia em Desenvolvimento de Sistemas\\Gamificação\\Restaurante Cheng\\sistema-pedidos-restaurante\\Restaurante.Cheng\\Restaurante.Cheng.Web\\Restaurante.Cheng.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.3\\microsoft.data.sqlite.core.7.0.3.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",
