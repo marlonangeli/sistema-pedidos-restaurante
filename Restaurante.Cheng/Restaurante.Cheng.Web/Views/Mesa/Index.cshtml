@@ -1,32 +1,72 @@
 @model IEnumerable<Mesa>
-<head>    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-
+ <div class="flex justify-end mb-4 mt-6">
+    <a href="/Mesa/Create" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nova Mesa</a>
+  </div>
 <body>
   <table class="border-collapse w-full">
     <thead>
       <tr>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">#</th>
-        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Status</th>
-        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Hora de Abertura</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Status
+        </th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Hora
+          de Abertura</th>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"></th>
       </tr>
     </thead>
     <tbody>
-      @foreach (var mesa in Model) {
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Numero</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Status</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.HoraAbertura</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@mesa.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
-            <a href="/Mesa/excluir/1" class="text-red-400 hover:text-red-600 underline">Excluir</a>
+      @foreach (var mesa in Model)
+      {
+        <tr
+          class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            @mesa.Numero</td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            @mesa.Status</td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            @mesa.HoraAbertura</td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@mesa.Id"
+              class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
+            <a class="text-red-400 hover:text-red-600 underline delete-mesa-btn" data-id="@mesa.Id" class="text-red-400 hover:text-red-600 underline">Excluir</a>
           </td>
         </tr>
-        }
+      }
     </tbody>
   </table>
 </body>
+
+@section scripts {
+  <script>
+    $(function () {
+$('.delete-mesa-btn').on('click', function (e) {
+        e.preventDefault();
+        if (confirm('Tem certeza que deseja excluir esta mesa?')) {
+           var mesaId = $(this).data('id');
+          var mesaId = $(this).data('id');
+          $.ajax({
+            url: '/Mesa/RemoveMesaAsync/' + mesaId,
+            type: 'POST',
+            data: { id: mesaId },
+            success: function (result) {
+              window.location.href = '/Mesa/Index';
+            },
+            error: function (error) {
+              console.log(error);
+            }
+          });
+        }
+      });
+    });
+  </script>
+}

@@ -14,7 +14,6 @@ public class GarcomChart
         var chart = new GarcomChart();
 
         chart.Labels = garcoms.Select(g => $"{g.Nome} {g.Sobrenome}").ToArray();
-        chart.Data = garcoms.Select(g => g.Vendas).ToArray();
 
         return chart;
     }

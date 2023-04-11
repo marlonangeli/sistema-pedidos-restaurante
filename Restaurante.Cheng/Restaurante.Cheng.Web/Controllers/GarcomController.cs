@@ -45,9 +45,9 @@ public class GarcomController : Controller
 
         [Route("Garcom/Create")]
     [HttpPost]
-    public async Task<IActionResult> CreateMesaAsync(Mesa mesa)
+    public async Task<IActionResult> CreateMesaAsync(Garcom garcom)
     {
-        var Mesa = await _mesaRepository.AddAsync(mesa);
+        var Garcom = await _garcomRepository.AddAsync(garcom);
         return RedirectToAction("Index");
     }
 
