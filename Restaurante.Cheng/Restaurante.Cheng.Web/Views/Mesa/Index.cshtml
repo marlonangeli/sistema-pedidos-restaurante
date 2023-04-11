@@ -1,3 +1,5 @@
+@using Restaurante.Cheng.Domain.Enums;
+@using Restaurante.Cheng
 @model IEnumerable<Mesa>
 
 <head>
@@ -5,9 +7,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
- <div class="flex justify-end mb-4 mt-6">
-    <a asp-controller="Mesa" asp-action="Create" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nova Mesa</a>
-  </div>
+<div class="flex justify-end mb-4 mt-6">
+  <a asp-controller="Mesa" asp-action="Create"
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nova Mesa</a>
+</div>
+
 <body>
   <table class="border-collapse w-full">
     <thead>
@@ -21,28 +25,146 @@
       </tr>
     </thead>
     <tbody>
-      @foreach (var mesa in Model) {
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Numero</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.Status</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.HoraAbertura</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@mesa.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
-            <a asp-controller="Mesa" asp-action="Delete" asp-route-id="@mesa.Id" class="text-red-400 hover:text-red-600 underline">Excluir</a>
+      @foreach (var mesa in Model)
+      {
+        <tr
+          class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            @mesa.Numero</td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            @mesa.Status</td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            @mesa.HoraAbertura</td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@mesa.Id"
+              class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
+            @if (mesa.Status == StatusEnum.Livre)
+            {
+              <a id="abrir-conta-link" class="text-green-400 hover:text-green-600 underline mr-4" data-mesa-id="@mesa.Id"
+                onclick="setarMesa(@mesa.Id)">Abrir Conta</a>
+            }
+            else
+            {
+              <a asp-controller="Mesa" asp-action="CloseBill" asp-route-id="@mesa.Id"
+                class="text-yellow-400 hover:text-yellow-600 underline mr-4">Fechar Conta</a>
+            }
+            <a class="text-red-400 hover:text-red-600 underline delete-mesa-btn" data-id="@mesa.Id"
+              class="text-red-400 hover:text-red-600 underline">Excluir</a>
           </td>
         </tr>
       }
     </tbody>
   </table>
 </body>
+<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
+  <div id="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"></div>
+  <div id="modal" class="fixed inset-0 z-10 overflow-y-auto hidden">
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+      <div class="flex flex-col">
+        <div
+          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+          <form onsubmit="abrirConta()" id="open-account-form">
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Abrir Conta</h3>
+                  <div class="mt-2">
+                    <label for="waiter-id" class="block text-gray-700 font-bold mb-2">ID do garçom</label>
+                    <input type="text" id="waiter-id" name="garcomId"
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <button type="submit"
+                class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Enviar</button>
+              <button type="button" id='fechar-modal'
+                class=" inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 @section scripts {
   <script>
+    const overlay = document.getElementById('overlay');
+    const modal = document.getElementById('modal');
+    const abrirContaLink = document.getElementById('abrir-conta-link');
+    const fecharModalLink = document.getElementById('fechar-modal');
+    abrirContaLink.addEventListener('click', () => {
+      overlay.classList.remove('hidden');
+      modal.classList.remove('hidden');
+    });
+    fecharModalLink.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      modal.classList.add('hidden');
+    });
+  </script>
+
+  <script>
+    function setarMesa(id) {
+      console.log('opa')
+      const abrirContaLink = document.getElementById("abrir-conta-link");
+      localStorage.setItem("mesa", id);
+      console.log(localStorage.getItem('mesa'))
+    }
+  </script>
+
+  <script>
+    function abrirConta() {
+      const form = document.getElementById("open-account-form");
+      const abrirContaLink = document.getElementById("abrir-conta-link");
+      const waiterId = form.elements["waiter_id"].value;
+      const mesaId = localStorage.getItem('mesa');
+      console.log(waiterId);
+      console.log(mesaId);
+      /*
+      $.ajax({
+        url: '/Atendimento/AbrirConta/' + mesaId + '/' + waiterId,
+        type: 'POST',
+        success: function (result) {
+          console.log(result);
+        },
+        error: function (xhr, status, error) {
+          console.log(url);
+          console.log('Error: ' + error.message);
+        }
+      });
+      */
+    }
+    function submitForm() {
+      const form = document.getElementById("open-account-form");
+      const abrirContaLink = document.getElementById("abrir-conta-link");
+      const waiterId = form.elements["waiter_id"].value;
+      const mesaId = localStorage.getItem('mesa');
+      fetch(`/Atendimento/AbrirConta?mesaId=${mesaId}&garcomId=${waiterId}`, { method: "POST" })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+        })
+        .catch(error => {
+          console.error(error);
+          alert("Ocorreu um erro ao abrir a conta.");
+        });
+      return false;
+    }
+  </script>
+
+  <script>
     $(function () {
-$('.delete-mesa-btn').on('click', function (e) {
+      $('.delete-mesa-btn').on('click', function (e) {
         e.preventDefault();
         if (confirm('Tem certeza que deseja excluir esta mesa?')) {
-           var mesaId = $(this).data('id');
+          var mesaId = $(this).data('id');
           var mesaId = $(this).data('id');
           $.ajax({
             url: '/Mesa/RemoveMesaAsync/' + mesaId,

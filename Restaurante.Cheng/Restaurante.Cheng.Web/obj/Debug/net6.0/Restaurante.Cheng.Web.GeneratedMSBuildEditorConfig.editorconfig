@@ -5,96 +5,97 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Restaurante.Cheng.Web
 build_property.RootNamespace = Restaurante.Cheng.Web
-build_property.ProjectDir = D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web\
+build_property.ProjectDir = C:\Users\gabri\OneDrive\Área de Trabalho\Meus Arquivos\UTFPR\5ºPeríodo CC\Tecnologia em Desenvolvimento de Sistemas\Gamificação\Restaurante Cheng\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web
+build_property.MSBuildProjectDirectory = C:\Users\gabri\OneDrive\Área de Trabalho\Meus Arquivos\UTFPR\5ºPeríodo CC\Tecnologia em Desenvolvimento de Sistemas\Gamificação\Restaurante Cheng\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Templates/EditarMesa.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Templates/EditarMesa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = VGVtcGxhdGVzXEVkaXRhck1lc2EuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Categoria/Create.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Categoria/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Categoria/Edit.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Categoria/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Categoria/Index.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Categoria/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Garcom/Create.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Garcom/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyY29tXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Garcom/Edit.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Garcom/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyY29tXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Garcom/Index.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Garcom/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FyY29tXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Home/Index.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Mesa/Create.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Mesa/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Mesa/Edit.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Mesa/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzYVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Mesa/Index.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Mesa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Produto/Create.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Produto/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Produto/Edit.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Produto/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Produto/Index.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Produto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/Error.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_Footer.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_Header.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/_ViewImports.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/_ViewStart.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projects/repos/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_Layout.cshtml]
+[C:/Users/gabri/OneDrive/Área de Trabalho/Meus Arquivos/UTFPR/5ºPeríodo CC/Tecnologia em Desenvolvimento de Sistemas/Gamificação/Restaurante Cheng/sistema-pedidos-restaurante/Restaurante.Cheng/Restaurante.Cheng.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-89yf0l4ewr
