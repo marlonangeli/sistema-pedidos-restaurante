@@ -2,7 +2,6 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Restaurante.Cheng.Web.Models;
 using Restaurante.Cheng.Domain.Interfaces;
-using Restaurante.Cheng.Domain.Enums;
 using Restaurante.Cheng.Domain.Entities;
 
 namespace Restaurante.Cheng.Web.Controllers;
@@ -26,10 +25,30 @@ public class MesaController : Controller
         return View(mesas);
     }
 
-    public IActionResult Edit(int id)
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, Mesa mesa)
     {
-        Console.WriteLine("teste");
-        return PartialView("~/Views/Mesa/Edit.cshtml");
+        if (ModelState.IsValid)
+        {
+            await _mesaRepository.UpdateAsync(mesa);
+            return RedirectToAction("Index");
+        }
+        
+        return View(mesa);
+    }
+
+    public async Task<IActionResult> Edit(int id)
+    {
+        var mesa = await _mesaRepository.GetByIdAsync(id);
+        return PartialView("~/Views/Mesa/Edit.cshtml", mesa);
+    }
+    
+    public async Task<IActionResult> Delete(int id)
+    {
+        var mesa = await _mesaRepository.GetByIdAsync(id);
+        if (mesa != null) await _mesaRepository.DeleteAsync(mesa);
+        else _logger.LogError($"Mesa com id {id} não encontrada");
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

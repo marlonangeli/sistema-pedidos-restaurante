@@ -32,13 +32,7 @@ public class RestauranteDbContext : DbContext
             .WithMany()
             .HasForeignKey(a => a.GarcomId);
 
-        modelBuilder.Entity<Atendimento>()
-            .HasMany(a => a.Produtos)
-            .WithMany()
-            .UsingEntity<Dictionary<string, object>>(
-                "AtendimentoProduto",
-                j => j.HasOne<Produto>().WithMany().HasForeignKey("ProdutoId"),
-                j => j.HasOne<Atendimento>().WithMany().HasForeignKey("AtendimentoId")
-            );
+        modelBuilder.Entity<AtendimentoProduto>()
+            .HasKey(ap => new {ap.AtendimentoId, ap.ProdutoId});
     }
 }

@@ -23,7 +23,7 @@
           <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@mesa.HoraAbertura</td>
           <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
             <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@mesa.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
-            <a href="/Mesa/excluir/1" class="text-red-400 hover:text-red-600 underline">Excluir</a>
+            <a asp-controller="Mesa" asp-action="Delete" asp-route-id="@mesa.Id" class="text-red-400 hover:text-red-600 underline">Excluir</a>
           </td>
         </tr>
         }

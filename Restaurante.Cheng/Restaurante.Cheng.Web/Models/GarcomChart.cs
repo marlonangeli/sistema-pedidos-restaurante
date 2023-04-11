@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Restaurante.Cheng.Domain.Entities;
 
 namespace Restaurante.Cheng.Web.Models;
@@ -14,7 +12,7 @@ public class GarcomChart
         var chart = new GarcomChart();
 
         chart.Labels = garcoms.Select(g => $"{g.Nome} {g.Sobrenome}").ToArray();
-        chart.Data = garcoms.Select(g => g.Vendas).ToArray();
+        chart.Data = garcoms.Select(g => g.Atendimentos.Count).ToArray();
 
         return chart;
     }

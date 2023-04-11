@@ -5,6 +5,7 @@ using Restaurante.Cheng.Domain.Interfaces;
 using Restaurante.Cheng.Domain.Enums;
 using Restaurante.Cheng.Domain.Entities;
 using Bogus;
+using Microsoft.EntityFrameworkCore;
 
 namespace Restaurante.Cheng.Web.Controllers;
 
@@ -12,36 +13,52 @@ public class GarcomController : Controller
 {
     private readonly ILogger<GarcomController> _logger;
     private readonly IRepository<Garcom> _garcomRepository;
+    private readonly IRepository<Atendimento> _atendimentoRepository;
 
-    public GarcomController(ILogger<GarcomController> logger, IRepository<Garcom> garcomRepository)
+    public GarcomController(ILogger<GarcomController> logger, IRepository<Garcom> garcomRepository,
+        IRepository<Atendimento> atendimentoRepository)
     {
         _logger = logger;
         _garcomRepository = garcomRepository;
+        _atendimentoRepository = atendimentoRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        /*
-          var garcom = new Garcom 
-    {
-        Nome = new Bogus.DataSets.Name().FirstName(),
-        Sobrenome = new Bogus.DataSets.Name().LastName(),
-        NumeroTelefone = new Bogus.DataSets.PhoneNumbers().PhoneNumber()
-    };
-
-      await _garcomRepository.AddAsync(garcom);
-      */
-      
-
         var garcons = await _garcomRepository.GetAllAsync();
         return View(garcons);
     }
 
-    public IActionResult Edit(int id)
+    public async Task<IActionResult> Edit(int id)
     {
-        Console.WriteLine("teste");
-        return PartialView("~/Views/Mesa/Edit.cshtml");
+        ViewBag.Atendimentos = await _atendimentoRepository.GetQueryable()
+            .AsNoTracking()
+            .Include(i => i.Mesa)
+            .ToListAsync();
+        var garcom = await _garcomRepository.GetByIdAsync(id);
+        return PartialView("~/Views/Garcom/Edit.cshtml", garcom);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, Garcom garcom)
+    {
+        // [Bind("Id,Nome,Sobrenome,NumeroTelefone,AtendimentoId")]
+        if (ModelState.IsValid)
+        {
+            await _garcomRepository.UpdateAsync(garcom);
+            return RedirectToAction("Index");
+        }
+
+        return View(garcom);
+    }
+    
+    public async Task<IActionResult> Delete(int id)
+    {
+        var garcom = await _garcomRepository.GetByIdAsync(id);
+        if (garcom != null) await _garcomRepository.DeleteAsync(garcom);
+        else _logger.LogError($"Garcom com id {id} não encontrado");
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

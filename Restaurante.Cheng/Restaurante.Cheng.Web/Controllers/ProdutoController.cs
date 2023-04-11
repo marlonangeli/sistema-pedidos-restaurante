@@ -5,6 +5,7 @@ using Restaurante.Cheng.Domain.Interfaces;
 using Restaurante.Cheng.Domain.Enums;
 using Restaurante.Cheng.Domain.Entities;
 using Bogus;
+using Microsoft.EntityFrameworkCore;
 
 namespace Restaurante.Cheng.Web.Controllers;
 
@@ -12,46 +13,39 @@ public class ProdutoController : Controller
 {
     private readonly ILogger<ProdutoController> _logger;
     private readonly IRepository<Produto> _ProdutoRepository;
+    private readonly IRepository<Categoria> _CategoriaRepository;
 
-    public ProdutoController(ILogger<ProdutoController> logger, IRepository<Produto> ProdutoRepository)
+    public ProdutoController(ILogger<ProdutoController> logger, IRepository<Produto> ProdutoRepository,
+        IRepository<Categoria> CategoriaRepository)
     {
         _logger = logger;
         _ProdutoRepository = ProdutoRepository;
+        _CategoriaRepository = CategoriaRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-            /*
-    var faker = new Faker();
-var produto = new Produto
-{
-    Id = faker.Random.Int(),
-    Nome = faker.Commerce.ProductName(),
-    Descricao = faker.Commerce.ProductDescription(),
-    Preco = faker.Random.Decimal(),
-    Categoria = new Categoria
-    {
-        Id = faker.Random.Int(),
-        Nome = faker.Commerce.Categories(1)[0],
-        Descricao = faker.Lorem.Sentence()
-    },
-    CategoriaId = faker.Random.Int()
-};
-
-      await _ProdutoRepository.AddAsync(produto);
-      */
-      
-      
-
-        var produtos = await _ProdutoRepository.GetAllAsync();
+        var produtos = await _ProdutoRepository.GetQueryable()
+            .AsNoTracking()
+            .Include(i => i.Categoria)
+            .ToListAsync();
         return View(produtos);
     }
 
-    public IActionResult Edit(int id)
+    public async Task<IActionResult> Edit(int id)
     {
-        Console.WriteLine("teste");
-        return PartialView("~/Views/Mesa/Edit.cshtml");
+        ViewBag.Categorias = await _CategoriaRepository.GetAllAsync();
+        var produto = await _ProdutoRepository.GetByIdAsync(id);
+        return PartialView("~/Views/Produto/Edit.cshtml", produto);
+    }
+
+    public async Task<IActionResult> Delete(int id)
+    {
+        var produto = await _ProdutoRepository.GetByIdAsync(id);
+        if (produto != null) await _ProdutoRepository.DeleteAsync(produto);
+        else _logger.LogError($"Produto com id {id} não encontrado");
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

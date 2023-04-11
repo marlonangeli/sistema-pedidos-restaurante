@@ -2,9 +2,14 @@
 
 public class Garcom
 {
+    public Garcom()
+    {
+        Atendimentos = new HashSet<Atendimento>();
+    }
     public int Id { get; set; }
     public string Nome { get; set; }
     public string Sobrenome { get; set; }
     public string NumeroTelefone { get; set; }
-    public int Vendas { get; set; }
+
+    public virtual ICollection<Atendimento> Atendimentos { get; set; }
 }

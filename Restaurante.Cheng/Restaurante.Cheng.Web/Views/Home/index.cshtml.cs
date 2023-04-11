@@ -1,6 +1,7 @@
 using Restaurante.Cheng.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Restaurante.Cheng.Domain.Interfaces;
 using Restaurante.Cheng.Domain.Entities;
 using Newtonsoft.Json;
@@ -25,7 +26,10 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        var garcons = await _garcomRepository.GetAllAsync();
+        var garcons = await _garcomRepository.GetQueryable()
+            .AsNoTracking()
+            .Include(i => i.Atendimentos)
+            .ToListAsync();
         GarcomChartData = JsonConvert.SerializeObject(GarcomChart.FromGarcoms(garcons));
     }
 }

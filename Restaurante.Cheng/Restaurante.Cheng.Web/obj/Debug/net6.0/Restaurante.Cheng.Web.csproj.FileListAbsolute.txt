@@ -163,3 +163,5 @@ C:\Users\gabri\OneDrive\Área de Trabalho\Meus Arquivos\UTFPR\5ºPeríodo CC\Tec
 C:\Users\gabri\OneDrive\Área de Trabalho\Meus Arquivos\UTFPR\5ºPeríodo CC\Tecnologia em Desenvolvimento de Sistemas\Gamificação\Restaurante Cheng\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web\obj\Debug\net6.0\ref\Restaurante.Cheng.Web.dll
 C:\Users\gabri\OneDrive\Área de Trabalho\Meus Arquivos\UTFPR\5ºPeríodo CC\Tecnologia em Desenvolvimento de Sistemas\Gamificação\Restaurante Cheng\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web\bin\Debug\net6.0\Bogus.dll
 C:\Users\gabri\OneDrive\Área de Trabalho\Meus Arquivos\UTFPR\5ºPeríodo CC\Tecnologia em Desenvolvimento de Sistemas\Gamificação\Restaurante Cheng\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web\bin\Debug\net6.0\Bogus.dll
+D:\Dev\Projects\repos\sistema-pedidos-restaurante\Restaurante.Cheng\Restaurante.Cheng.Web\bin\Debug\net6.0\Newtonsoft.Json.dll

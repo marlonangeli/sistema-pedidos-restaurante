@@ -17,7 +17,41 @@ namespace Restaurante.Cheng.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.3");
 
-            modelBuilder.Entity("AtendimentoProduto", b =>
+            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Atendimento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("GarcomId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("GarcomId1")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("HorarioPedido")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MesaId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("MesaId1")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GarcomId");
+
+                    b.HasIndex("GarcomId1");
+
+                    b.HasIndex("MesaId");
+
+                    b.HasIndex("MesaId1");
+
+                    b.ToTable("Atendimentos");
+                });
+
+            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.AtendimentoProduto", b =>
                 {
                     b.Property<int>("AtendimentoId")
                         .HasColumnType("INTEGER");
@@ -30,30 +64,6 @@ namespace Restaurante.Cheng.Data.Migrations
                     b.HasIndex("ProdutoId");
 
                     b.ToTable("AtendimentoProduto");
-                });
-
-            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Atendimento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("GarcomId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("HorarioPedido")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("MesaId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GarcomId");
-
-                    b.HasIndex("MesaId");
-
-                    b.ToTable("Atendimentos");
                 });
 
             modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Categoria", b =>
@@ -145,21 +155,6 @@ namespace Restaurante.Cheng.Data.Migrations
                     b.ToTable("Produtos");
                 });
 
-            modelBuilder.Entity("AtendimentoProduto", b =>
-                {
-                    b.HasOne("Restaurante.Cheng.Domain.Entities.Atendimento", null)
-                        .WithMany()
-                        .HasForeignKey("AtendimentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Restaurante.Cheng.Domain.Entities.Produto", null)
-                        .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Atendimento", b =>
                 {
                     b.HasOne("Restaurante.Cheng.Domain.Entities.Garcom", "Garcom")
@@ -168,15 +163,42 @@ namespace Restaurante.Cheng.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Restaurante.Cheng.Domain.Entities.Garcom", null)
+                        .WithMany("Atendimentos")
+                        .HasForeignKey("GarcomId1");
+
                     b.HasOne("Restaurante.Cheng.Domain.Entities.Mesa", "Mesa")
                         .WithMany()
                         .HasForeignKey("MesaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Restaurante.Cheng.Domain.Entities.Mesa", null)
+                        .WithMany("Atendimentos")
+                        .HasForeignKey("MesaId1");
+
                     b.Navigation("Garcom");
 
                     b.Navigation("Mesa");
+                });
+
+            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.AtendimentoProduto", b =>
+                {
+                    b.HasOne("Restaurante.Cheng.Domain.Entities.Atendimento", "Atendimento")
+                        .WithMany("Produtos")
+                        .HasForeignKey("AtendimentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Restaurante.Cheng.Domain.Entities.Produto", "Produto")
+                        .WithMany("Atendimentos")
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Atendimento");
+
+                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Produto", b =>
@@ -188,6 +210,26 @@ namespace Restaurante.Cheng.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Categoria");
+                });
+
+            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Atendimento", b =>
+                {
+                    b.Navigation("Produtos");
+                });
+
+            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Garcom", b =>
+                {
+                    b.Navigation("Atendimentos");
+                });
+
+            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Mesa", b =>
+                {
+                    b.Navigation("Atendimentos");
+                });
+
+            modelBuilder.Entity("Restaurante.Cheng.Domain.Entities.Produto", b =>
+                {
+                    b.Navigation("Atendimentos");
                 });
 #pragma warning restore 612, 618
         }
