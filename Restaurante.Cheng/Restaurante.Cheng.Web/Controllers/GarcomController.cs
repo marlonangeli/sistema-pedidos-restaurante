@@ -40,8 +40,15 @@ public class GarcomController : Controller
 
     public IActionResult Edit(int id)
     {
-        Console.WriteLine("teste");
-        return PartialView("~/Views/Mesa/Edit.cshtml");
+        return PartialView("~/Views/Garcom/Edit.cshtml");
+    }
+
+        [Route("Garcom/Create")]
+    [HttpPost]
+    public async Task<IActionResult> CreateMesaAsync(Mesa mesa)
+    {
+        var Mesa = await _mesaRepository.AddAsync(mesa);
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
