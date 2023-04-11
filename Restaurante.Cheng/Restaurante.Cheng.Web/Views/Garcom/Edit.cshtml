@@ -1,0 +1,66 @@
+@model Garcom
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Editar Garçom";
+}
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<form asp-controller="Garcom" asp-action="Edit" asp-route-id="@Model.Id" method="POST">
+    <div class="px-6 py-4">
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   value="@Model.Nome">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="sobrenome">Sobrenome:</label>
+            <input type="text" name="sobrenome" id="sobrenome"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   value="@Model.Sobrenome">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="numeroTelefone">
+                Número de Telefone:
+            </label>
+            <input type="text" name="numeroTelefone" id="numeroTelefone"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   value="@Model.NumeroTelefone">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="Atendimento">
+                Atentimento:
+            </label>
+            <select name="Atendimento" id="Atendimento"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                @foreach (var atendimento in ViewBag.Atendimentos as List<Atendimento>)
+                {
+                    if (atendimento.GarcomId == Model.Id)
+                    {
+                        <option value="@atendimento.Id" selected>@atendimento.Mesa.Numero - @atendimento.HorarioPedido</option>
+                    }
+                    else
+                    {
+                        <option value="@atendimento.Id">@atendimento.Mesa.Numero - @atendimento.HorarioPedido</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+    <div class="px-6 py-4 bg-gray-100 text-right">
+        <button type="button"
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+            Cancelar
+        </button>
+        <button type="submit"
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Salvar
+        </button>
+    </div>
+</form>
+</body>

@@ -1,0 +1,66 @@
+@model Produto
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Editar Produto";
+}
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<form asp-controller="Produto" asp-action="Edit" method="post">
+    <div class="px-6 py-4">
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="Nome">Nome:</label>
+            <input type="text" name="Nome" id="Nome"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   value="@Model.Nome">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="Descricao">Descrição:</label>
+            <input type="text" name="Descricao" id="Descricao"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   value="@Model.Descricao">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="Preco">
+                Preço:
+            </label>
+            <input type="number" name="Preco" id="Preco"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   value="@Model.Preco">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="CategoriaId">
+                Categoria:
+            </label>
+            <select name="CategoriaId" id="CategoriaId"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                @foreach (var categoria in ViewBag.Categorias as List<Categoria>)
+                {
+                    if (categoria.Id == Model.CategoriaId)
+                    {
+                        <option value="@categoria.Id" selected>@categoria.Nome</option>
+                    }
+                    else
+                    {
+                        <option value="@categoria.Id">@categoria.Nome</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+    <div class="px-6 py-4 bg-gray-100 text-right">
+        <button type="button"
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+            Cancelar
+        </button>
+        <button type="submit"
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Salvar
+        </button>
+    </div>
+</form>
+</body>
