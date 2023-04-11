@@ -22,25 +22,13 @@ public class CategoriaController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-    /*    
-          var categoria = new Categoria 
-    {
-        Nome = new Bogus.DataSets.Commerce().Categories(1)[0],
-        Descricao = new Bogus.DataSets.Commerce().ProductAdjective()
-    };
-
-      await _CategoriaRepository.AddAsync(categoria);
-      
-      */
-
         var categorias = await _CategoriaRepository.GetAllAsync();
         return View(categorias);
     }
 
     public IActionResult Edit(int id)
     {
-        Console.WriteLine("teste");
-        return PartialView("~/Views/Mesa/Edit.cshtml");
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

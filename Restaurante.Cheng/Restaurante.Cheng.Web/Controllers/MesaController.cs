@@ -52,13 +52,10 @@ public class MesaController : Controller
     [HttpPost]
     public async Task<IActionResult> RemoveMesaAsync(int id)
     {
-        if (ModelState.IsValid)
-        {
-            await _mesaRepository.UpdateAsync(mesa);
-            return RedirectToAction("Index");
-        }
-        
-        return View(mesa);
+        var mesa = await _mesaRepository.GetByIdAsync(id);
+        if (mesa != null) await _mesaRepository.DeleteAsync(mesa);
+        else _logger.LogError($"Mesa com id {id} não encontrada");
+        return RedirectToAction("Index");
     }
 
     // public async Task<IActionResult> Edit(int id)

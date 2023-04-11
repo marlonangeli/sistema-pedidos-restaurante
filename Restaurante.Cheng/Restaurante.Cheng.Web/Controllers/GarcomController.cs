@@ -25,18 +25,6 @@ public class GarcomController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        /*
-          var garcom = new Garcom 
-    {
-        Nome = new Bogus.DataSets.Name().FirstName(),
-        Sobrenome = new Bogus.DataSets.Name().LastName(),
-        NumeroTelefone = new Bogus.DataSets.PhoneNumbers().PhoneNumber()
-    };
-
-      await _garcomRepository.AddAsync(garcom);
-      */
-      
-
         var garcons = await _garcomRepository.GetAllAsync();
         return View(garcons);
     }
@@ -51,18 +39,18 @@ public class GarcomController : Controller
         return PartialView("~/Views/Garcom/Edit.cshtml", garcom);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Edit(int id, Garcom garcom)
-    {
-        // [Bind("Id,Nome,Sobrenome,NumeroTelefone,AtendimentoId")]
-        if (ModelState.IsValid)
-        {
-            await _garcomRepository.UpdateAsync(garcom);
-            return RedirectToAction("Index");
-        }
-
-        return View(garcom);
-    }
+    // [HttpPost]
+    // public async Task<IActionResult> Edit(int id, Garcom garcom)
+    // {
+    //     // [Bind("Id,Nome,Sobrenome,NumeroTelefone,AtendimentoId")]
+    //     if (ModelState.IsValid)
+    //     {
+    //         await _garcomRepository.UpdateAsync(garcom);
+    //         return RedirectToAction("Index");
+    //     }
+    //
+    //     return View(garcom);
+    // }
     
     public async Task<IActionResult> Delete(int id)
     {
