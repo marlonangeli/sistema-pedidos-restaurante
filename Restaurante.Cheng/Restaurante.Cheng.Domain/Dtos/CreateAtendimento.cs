@@ -1,6 +1,4 @@
-﻿using Restaurante.Cheng.Domain.Entities;
-
-namespace Restaurante.Cheng.Domain.Dtos;
+﻿namespace Restaurante.Cheng.Domain.Dtos;
 
 public class CreateAtendimento
 {

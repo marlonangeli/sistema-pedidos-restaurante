@@ -4,26 +4,31 @@
     Layout = "_Layout";
     ViewData["Title"] = "Produtos";
 }
-<head>    
+<head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 
 <body>
-  <table class="border-collapse w-full">
-<thead>
-  <tr>
-    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Id</th>
-    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Nome</th>
-    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Descrição</th>
-    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Preço</th>
-    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Categoria</th>
-      <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"></th>
-  </tr>
-</thead>
-<tbody>
-    @foreach (var produto in Model) {
+<div class="flex justify-end mb-4 mt-6">
+    <a asp-controller="Produto" asp-action="Create" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Novo Produto</a>
+</div>
+
+<table class="border-collapse w-full">
+    <thead>
+    <tr>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Id</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Nome</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Descrição</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Preço</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Categoria</th>
+        <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var produto in Model)
+    {
         <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@produto.Id</td>
             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@produto.Nome</td>
@@ -36,6 +41,6 @@
             </td>
         </tr>
     }
-</tbody>
-  </table>
+    </tbody>
+</table>
 </body>

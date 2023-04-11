@@ -2,9 +2,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Restaurante.Cheng.Web.Models;
 using Restaurante.Cheng.Domain.Interfaces;
-using Restaurante.Cheng.Domain.Enums;
 using Restaurante.Cheng.Domain.Entities;
-using Bogus;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Restaurante.Cheng.Web.Controllers;
@@ -35,7 +34,9 @@ public class ProdutoController : Controller
 
     public async Task<IActionResult> Edit(int id)
     {
-        ViewBag.Categorias = await _CategoriaRepository.GetAllAsync();
+        var categorias = await _CategoriaRepository.GetAllAsync();
+        var selectList = new SelectList(categorias, "Id", "Nome");
+        ViewBag.Categorias = selectList;
         var produto = await _ProdutoRepository.GetByIdAsync(id);
         return PartialView("~/Views/Produto/Edit.cshtml", produto);
     }
@@ -43,7 +44,7 @@ public class ProdutoController : Controller
     public async Task<IActionResult> Delete(int id)
     {
         var produto = await _ProdutoRepository.GetByIdAsync(id);
-        if (produto != null) await _ProdutoRepository.DeleteAsync(produto);
+        if (produto != null) await _ProdutoRepository.DeleteAsync(id);
         else _logger.LogError($"Produto com id {id} não encontrado");
         return RedirectToAction("Index");
     }
@@ -54,5 +55,41 @@ public class ProdutoController : Controller
         return View(
             new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier }
         );
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(Produto produto)
+    {
+        try
+        {
+            await _ProdutoRepository.UpdateAsync(produto);
+            return RedirectToAction("Index");
+        }
+        catch
+        {
+            return View(produto);
+        }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(Produto produto)
+    {
+        try
+        {
+            await _ProdutoRepository.AddAsync(produto);
+            return RedirectToAction("Index");
+        }
+        catch
+        {
+            return View(produto);
+        }
+    }
+
+    public async Task<IActionResult> Create()
+    {
+        var categorias = await _CategoriaRepository.GetAllAsync();
+        var selectList = new SelectList(categorias, "Id", "Nome");
+        ViewBag.Categorias = selectList;
+        return View();
     }
 }

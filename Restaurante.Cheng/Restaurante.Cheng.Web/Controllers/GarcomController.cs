@@ -2,10 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Restaurante.Cheng.Web.Models;
 using Restaurante.Cheng.Domain.Interfaces;
-using Restaurante.Cheng.Domain.Enums;
 using Restaurante.Cheng.Domain.Entities;
-using Bogus;
-using Microsoft.EntityFrameworkCore;
 
 namespace Restaurante.Cheng.Web.Controllers;
 
@@ -20,6 +17,7 @@ public class GarcomController : Controller
     {
         _logger = logger;
         _garcomRepository = garcomRepository;
+        _atendimentoRepository = atendimentoRepository;
     }
 
     [HttpGet]
@@ -31,40 +29,38 @@ public class GarcomController : Controller
 
     public async Task<IActionResult> Edit(int id)
     {
-        ViewBag.Atendimentos = await _atendimentoRepository.GetQueryable()
-            .AsNoTracking()
-            .Include(i => i.Mesa)
-            .ToListAsync();
         var garcom = await _garcomRepository.GetByIdAsync(id);
         return PartialView("~/Views/Garcom/Edit.cshtml", garcom);
     }
 
-    // [HttpPost]
-    // public async Task<IActionResult> Edit(int id, Garcom garcom)
-    // {
-    //     // [Bind("Id,Nome,Sobrenome,NumeroTelefone,AtendimentoId")]
-    //     if (ModelState.IsValid)
-    //     {
-    //         await _garcomRepository.UpdateAsync(garcom);
-    //         return RedirectToAction("Index");
-    //     }
-    //
-    //     return View(garcom);
-    // }
+    [HttpPost]
+    public async Task<IActionResult> Edit(Garcom garcom)
+    {
+        if (ModelState.IsValid)
+        {
+            await _garcomRepository.UpdateAsync(garcom);
+            return RedirectToAction("Index");
+        }
+    
+        return View(garcom);
+    }
     
     public async Task<IActionResult> Delete(int id)
     {
         var garcom = await _garcomRepository.GetByIdAsync(id);
-        if (garcom != null) await _garcomRepository.DeleteAsync(garcom);
+        if (garcom != null) await _garcomRepository.DeleteAsync(id);
         else _logger.LogError($"Garcom com id {id} não encontrado");
         return RedirectToAction("Index");
     }
     
-    [Route("Garcom/Create")]
     [HttpPost]
-    public async Task<IActionResult> CreateMesaAsync(Garcom garcom)
+    public async Task<IActionResult> Create(Garcom garcom)
     {
-        var Garcom = await _garcomRepository.AddAsync(garcom);
+        if (ModelState.IsValid)
+        {
+            await _garcomRepository.AddAsync(garcom);
+            return RedirectToAction("Index");
+        }
         return RedirectToAction("Index");
     }
 
@@ -74,5 +70,10 @@ public class GarcomController : Controller
         return View(
             new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier }
         );
+    }
+
+    public IActionResult Create()
+    {
+        return PartialView("~/Views/Garcom/Create.cshtml");
     }
 }

@@ -1,32 +1,38 @@
 @model IEnumerable<Categoria>
-<head>    
+<head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 
 <body>
-  <table class="border-collapse w-full">
+
+<div class="flex justify-end mb-4 mt-6">
+    <a asp-controller="Categoria" asp-action="Create" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nova Categoria</a>
+</div>
+
+<table class="border-collapse w-full">
     <thead>
-      <tr>
+    <tr>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">#</th>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Nome</th>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Descricao</th>
         <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"></th>
-      </tr>
+    </tr>
     </thead>
     <tbody>
-      @foreach (var categoria in Model) {
+    @foreach (var categoria in Model)
+    {
         <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Id</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Nome</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Descricao</td>
-          <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-            <a asp-controller="Mesa" asp-action="Edit" asp-route-id="@categoria.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
-            <a asp-controller="Mesa" asp-action="Delete" asp-route-id="@categoria.Id" class="text-red-400 hover:text-red-600 underline">Excluir</a>
-          </td>
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Id</td>
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Nome</td>
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">@categoria.Descricao</td>
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                <a asp-controller="Categoria" asp-action="Edit" asp-route-id="@categoria.Id" class="text-blue-400 hover:text-blue-600 underline mr-4">Editar</a>
+                <a asp-controller="Categoria" asp-action="Delete" asp-route-id="@categoria.Id" class="text-red-400 hover:text-red-600 underline">Excluir</a>
+            </td>
         </tr>
-        }
+    }
     </tbody>
-  </table>
+</table>
 </body>
