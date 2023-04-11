@@ -24,9 +24,33 @@ public class MesaController : Controller
         var mesas = await _mesaRepository.GetAllAsync();
         return View(mesas);
     }
+    
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var mesa = await _mesaRepository.GetAllAsync();
+        var x = mesa.ElementAt(id);
+        var model = new EditMesaViewModel(id, x);
 
+        return PartialView("~/Views/Mesa/Edit.cshtml", model);
+    }
+
+    [Route("Mesa/CreateMesaAsync")]
     [HttpPost]
-    public async Task<IActionResult> Edit(int id, Mesa mesa)
+    public async Task<IActionResult> CreateMesaAsync(Mesa mesa)
+    {
+        var Mesa = await _mesaRepository.AddAsync(mesa);
+        return RedirectToAction("Index");
+    }
+
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    [Route("Mesa/RemoveMesaAsync/{id}")]
+    [HttpPost]
+    public async Task<IActionResult> RemoveMesaAsync(int id)
     {
         if (ModelState.IsValid)
         {
@@ -37,17 +61,24 @@ public class MesaController : Controller
         return View(mesa);
     }
 
-    public async Task<IActionResult> Edit(int id)
-    {
-        var mesa = await _mesaRepository.GetByIdAsync(id);
-        return PartialView("~/Views/Mesa/Edit.cshtml", mesa);
-    }
+    // public async Task<IActionResult> Edit(int id)
+    // {
+    //     var mesa = await _mesaRepository.GetByIdAsync(id);
+    //     return PartialView("~/Views/Mesa/Edit.cshtml", mesa);
+    // }
     
     public async Task<IActionResult> Delete(int id)
     {
         var mesa = await _mesaRepository.GetByIdAsync(id);
         if (mesa != null) await _mesaRepository.DeleteAsync(mesa);
         else _logger.LogError($"Mesa com id {id} não encontrada");
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> UpdateMesaSync(Mesa mesa)
+    {
+        var Mesa = await _mesaRepository.UpdateAsync(mesa);
         return RedirectToAction("Index");
     }
 

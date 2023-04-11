@@ -20,12 +20,23 @@ public class GarcomController : Controller
     {
         _logger = logger;
         _garcomRepository = garcomRepository;
-        _atendimentoRepository = atendimentoRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> Index()
     {
+        /*
+          var garcom = new Garcom 
+    {
+        Nome = new Bogus.DataSets.Name().FirstName(),
+        Sobrenome = new Bogus.DataSets.Name().LastName(),
+        NumeroTelefone = new Bogus.DataSets.PhoneNumbers().PhoneNumber()
+    };
+
+      await _garcomRepository.AddAsync(garcom);
+      */
+      
+
         var garcons = await _garcomRepository.GetAllAsync();
         return View(garcons);
     }
@@ -58,6 +69,14 @@ public class GarcomController : Controller
         var garcom = await _garcomRepository.GetByIdAsync(id);
         if (garcom != null) await _garcomRepository.DeleteAsync(garcom);
         else _logger.LogError($"Garcom com id {id} não encontrado");
+        return RedirectToAction("Index");
+    }
+    
+    [Route("Garcom/Create")]
+    [HttpPost]
+    public async Task<IActionResult> CreateMesaAsync(Garcom garcom)
+    {
+        var Garcom = await _garcomRepository.AddAsync(garcom);
         return RedirectToAction("Index");
     }
 
