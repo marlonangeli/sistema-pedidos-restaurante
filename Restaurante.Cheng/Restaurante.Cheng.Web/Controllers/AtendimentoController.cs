@@ -34,6 +34,13 @@ public class AtendimentoController : Controller
         return View();
     }
 
+    [HttpGet]
+        [Route("Atendimento/VisualizarConta/{id}")]
+    public IActionResult VisualizarConta(int id)
+    {
+        return PartialView("~/Views/Atendimento/VisualizarConta.cshtml");
+    }
+
     [HttpPost]
     [Route("Atendimento/AbrirConta/{mesaId}/{garcomId}")]
     public async Task<IActionResult> AbrirContaAsync(int mesaId, int garcomId)
@@ -52,7 +59,7 @@ public class AtendimentoController : Controller
         var atendimento = new Atendimento
         {
             MesaId = mesaId,
-            GarcomId = garcomId, // 
+            GarcomId = garcomId, //
             HorarioPedido = DateTime.Now
         };
 
