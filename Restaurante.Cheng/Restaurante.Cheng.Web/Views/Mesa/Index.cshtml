@@ -50,7 +50,7 @@
             {
               <a asp-controller="Mesa" asp-action="CloseBill" asp-route-id="@mesa.Id"
                 class="text-yellow-400 hover:text-yellow-600 underline mr-4">Fechar Conta</a>
-              <a asp-controller="Mesa" asp-action="CloseBill" asp-route-id="@mesa.Id"
+              <a asp-controller="Mesa" asp-action="ViewBill" asp-route-id="@mesa.Id"
                 class="text-purple-400 hover:text-purple-600 underline mr-4">Visualizar Conta</a>
             }
             <a class="text-red-400 hover:text-red-600 underline delete-mesa-btn" data-id="@mesa.Id"
@@ -116,7 +116,7 @@
       console.log('opa')
       const abrirContaLink = document.getElementById("abrir-conta-link");
       localStorage.setItem("mesa", id);
-      console.log(localStorage.getItem('mesa'))
+      abrirContaLink.href = "/Mesa/AbrirConta/" + id;
     }
   </script>
 
