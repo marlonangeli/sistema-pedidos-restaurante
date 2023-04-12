@@ -6,4 +6,6 @@ public class AtendimentoProduto
     public Atendimento Atendimento { get; set; }
     public int ProdutoId { get; set; }
     public Produto Produto { get; set; }
+
+    public int Quantidade { get; set ;}
 }

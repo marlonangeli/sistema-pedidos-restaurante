@@ -12,8 +12,11 @@ public class GarcomController : Controller
     private readonly IRepository<Garcom> _garcomRepository;
     private readonly IRepository<Atendimento> _atendimentoRepository;
 
-    public GarcomController(ILogger<GarcomController> logger, IRepository<Garcom> garcomRepository,
-        IRepository<Atendimento> atendimentoRepository)
+    public GarcomController(
+        ILogger<GarcomController> logger,
+        IRepository<Garcom> garcomRepository,
+        IRepository<Atendimento> atendimentoRepository
+    )
     {
         _logger = logger;
         _garcomRepository = garcomRepository;
@@ -25,6 +28,28 @@ public class GarcomController : Controller
     {
         var garcons = await _garcomRepository.GetAllAsync();
         return View(garcons);
+    }
+
+    [HttpGet]
+    [Route("Garcom/SalesByGarcon")]
+    public async Task<List<object>> GetSalesByGarcom()
+    {
+        var atendimentos = await _atendimentoRepository.GetAllAsync();
+        var garcons = await _garcomRepository.GetAllAsync();
+
+        var salesByGarcom = garcons.Select(
+            garcom =>
+                new
+                {
+                    garcom = $"{garcom.Nome} {garcom.Sobrenome}",
+                    total_sales = atendimentos
+                        .Where(atendimento => atendimento.GarcomId == garcom.Id)
+                        .SelectMany(atendimento => atendimento.Produtos)
+                        .Sum(atendimentoProduto => atendimentoProduto.Produto.Preco)
+                }
+        );
+
+        return salesByGarcom.ToList<object>();
     }
 
     public async Task<IActionResult> Edit(int id)
@@ -41,18 +66,20 @@ public class GarcomController : Controller
             await _garcomRepository.UpdateAsync(garcom);
             return RedirectToAction("Index");
         }
-    
+
         return View(garcom);
     }
-    
+
     public async Task<IActionResult> Delete(int id)
     {
         var garcom = await _garcomRepository.GetByIdAsync(id);
-        if (garcom != null) await _garcomRepository.DeleteAsync(id);
-        else _logger.LogError($"Garcom com id {id} não encontrado");
+        if (garcom != null)
+            await _garcomRepository.DeleteAsync(id);
+        else
+            _logger.LogError($"Garcom com id {id} não encontrado");
         return RedirectToAction("Index");
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> Create(Garcom garcom)
     {

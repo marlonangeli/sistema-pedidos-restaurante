@@ -1,0 +1,28 @@
+@page
+@model Atendimento
+
+<div class="container mx-auto px-4">
+    <h1 class="text-2xl font-bold mb-4">Atendimento</h1>
+    <p><strong>Mesa:</strong> @Model.Mesa</p>
+    <p><strong>Garcom:</strong> @Model.Garcom</p>
+    <p><strong>Horario do Pedido:</strong> @Model.HorarioPedido.ToString("dd/MM/yyyy hh:mm:ss")</p>
+    <table class="table-auto w-full mt-4">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">Produto</th>
+                <th class="px-4 py-2">Quantidade</th>
+                <th class="px-4 py-2">Preco Unitario</th>
+                <th class="px-4 py-2">Preco Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model.Produtos)
+            {
+                <tr>
+                    <td class="border px-4 py-2">@produto.Produto.Nome</td>
+                    <td class="border px-4 py-2">@produto.Quantidade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

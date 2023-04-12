@@ -10,29 +10,33 @@ public class RestauranteDbContext : DbContext
     public DbSet<Categoria> Categorias { get; set; }
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Atendimento> Atendimentos { get; set; }
-    
-    public RestauranteDbContext(DbContextOptions<RestauranteDbContext> options) : base(options)
-    {
-    }
+
+    public DbSet<AtendimentoProduto> AtendimentoProdutos { get; set; }
+    public RestauranteDbContext(DbContextOptions<RestauranteDbContext> options)
+        : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Produto>()
+        modelBuilder
+            .Entity<Produto>()
             .HasOne(p => p.Categoria)
             .WithMany()
             .HasForeignKey(p => p.CategoriaId);
 
-        modelBuilder.Entity<Atendimento>()
+        modelBuilder
+            .Entity<Atendimento>()
             .HasOne(a => a.Mesa)
             .WithMany()
             .HasForeignKey(a => a.MesaId);
 
-        modelBuilder.Entity<Atendimento>()
+        modelBuilder
+            .Entity<Atendimento>()
             .HasOne(a => a.Garcom)
             .WithMany()
             .HasForeignKey(a => a.GarcomId);
 
-        modelBuilder.Entity<AtendimentoProduto>()
-            .HasKey(ap => new {ap.AtendimentoId, ap.ProdutoId});
+        modelBuilder
+            .Entity<AtendimentoProduto>()
+            .HasKey(ap => new { ap.AtendimentoId, ap.ProdutoId });
     }
 }
