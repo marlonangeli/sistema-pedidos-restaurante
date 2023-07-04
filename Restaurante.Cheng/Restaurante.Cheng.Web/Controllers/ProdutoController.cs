@@ -170,7 +170,7 @@ public class ProdutoController : Controller
         var categorias = await _CategoriaRepository.GetAllAsync();
         var selectList = new SelectList(categorias, "Id", "Nome");
         ViewBag.Categorias = selectList;
-        return PartialView("~/Views/Garcom/Create.cshtml");
+        return PartialView("~/Views/Produto/Create.cshtml");
     }
 
     /*

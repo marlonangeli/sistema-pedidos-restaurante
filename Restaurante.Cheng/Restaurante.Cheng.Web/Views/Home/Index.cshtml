@@ -54,7 +54,7 @@
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: '@Url.Action("SalesByGarcon", "Garcom")',
+            url: '@Url.Action("GetSalesByGarcom", "Garcom")',
             type: 'GET',
             success: function (result) {
                 var salesByGarconData = result
@@ -95,7 +95,7 @@
 
     $(document).ready(function () {
         $.ajax({
-            url: '@Url.Action("GetSaleByMesas", "Mesa")',
+            url: '@Url.Action("GetSalesByMesa", "Mesa")',
             type: 'GET',
             success: function (result) {
                 var salesByMesaData = result;
@@ -174,7 +174,7 @@
 
     $(document).ready(function () {
         $.ajax({
-            url: '@Url.Action("MostSoldByCategory", "Produto")',
+            url: '@Url.Action("GetMostSoldByCategory", "Produto")',
             type: 'GET',
             success: function (result) {
                 var mostSoldProductByCategoryData = result;

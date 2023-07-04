@@ -21,37 +21,17 @@
             @Html.TextBoxFor(model => model.Nome, new { @class = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" })
         </div>
         <div class="mb-4">
-            @Html.LabelFor(model => model.Descricao, new { @class = "block text-gray-700 font-bold mb-2" })
+            @Html.LabelFor(model => model.Descricao, "Descrição", new { @class = "block text-gray-700 font-bold mb-2" })
             @Html.TextBoxFor(model => model.Descricao, new { @class = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" })
         </div>
         <div class="mb-4">
-            @Html.LabelFor(model => model.Preco, new { @class = "block text-gray-700 font-bold mb-2" })
+            @Html.LabelFor(model => model.Preco, "Preço", new { @class = "block text-gray-700 font-bold mb-2" })
             @Html.TextBoxFor(model => model.Preco, new { @class = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" })
         </div>
         <div class="mb-4">
-            @Html.LabelFor(model => model.Categoria, new { @class = "block text-gray-700 font-bold mb-2" })
-            @Html.DropDownListFor(model => model.CategoriaId, new SelectList(Enum.GetValues(typeof(Categoria))), "Selecione a categoria", new { @class = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" })
-        </div>
-        @Html.TextBoxFor(model => model.Nome, new { @class = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", required = "required" })
-    </div>
-    <div class="mb-4">
-        @Html.LabelFor(model => model.CategoriaId, new { @class = "block text-gray-700 font-bold mb-2" })
-        <div class="relative inline-block w-full">
+            @Html.LabelFor(model => model.CategoriaId, "Categoria", new { @class = "block text-gray-700 font-bold mb-2" })
             @Html.DropDownListFor(model => model.CategoriaId, ViewBag.Categorias as SelectList, "-- Select Category --", new { @class = "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline", required = "required" })
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M14.95 7.95a.999.999 0 1 0-1.41-1.41l-3.54 3.54-1.54-1.54a.999.999 0 1 0-1.41 1.41l2.46 2.46a.999.999 0 0 0 1.41 0l4.46-4.46z"/>
-                </svg>
-            </div>
         </div>
-    </div>
-    <div class="mb-4">
-        @Html.LabelFor(model => model.Descricao, new { @class = "block text-gray-700 font-bold mb-2" })
-        @Html.TextBoxFor(model => model.Descricao, new { @class = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", required = "required" })
-    </div>
-    <div class="mb-4">
-        @Html.LabelFor(model => model.Preco, new { @class = "block text-gray-700 font-bold mb-2" })
-        @Html.TextBoxFor(model => model.Preco, new { @class = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", required = "required" })
     </div>
 
     <div class="px-6 py-4 bg-gray-100 text-right">

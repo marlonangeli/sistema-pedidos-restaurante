@@ -1,4 +1,8 @@
-﻿namespace Restaurante.Cheng.Domain.Interfaces;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Restaurante.Cheng.Domain.Interfaces;
 
 public interface IRepository<TEntity> where TEntity : class
 {

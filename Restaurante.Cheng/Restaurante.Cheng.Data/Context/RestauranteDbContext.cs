@@ -34,6 +34,18 @@ public class RestauranteDbContext : DbContext
             .HasOne(a => a.Garcom)
             .WithMany()
             .HasForeignKey(a => a.GarcomId);
+        
+        modelBuilder
+            .Entity<Atendimento>()
+            .HasMany(a => a.Produtos)
+            .WithOne(p => p.Atendimento)
+            .HasForeignKey(ap => ap.AtendimentoId);
+        
+        modelBuilder
+            .Entity<Produto>()
+            .HasMany(p => p.Atendimentos)
+            .WithOne(ap => ap.Produto)
+            .HasForeignKey(ap => ap.ProdutoId);
 
         modelBuilder
             .Entity<AtendimentoProduto>()
